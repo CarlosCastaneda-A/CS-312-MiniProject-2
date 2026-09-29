@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+    min-height: 100vh;
+}
+
+header {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+header h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.search-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-section h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 60%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #222;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 5px;
+}
+
+button:hover {
+    background: #444;
+}
+
+.random-button {
+    background: #555;
+}
+
+.error {
+    background: #ffe0e0;
+    border: 1px solid #ff9999;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.cocktail-card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    gap: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.cocktail-card img {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cocktail-info {
+    flex: 1;
+}
+
+.cocktail-info h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.cocktail-info p {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.cocktail-info h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.cocktail-info ul {
+    padding-left: 20px;
+}
+
+.cocktail-info li {
+    margin-bottom: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px;
+    margin-top: 40px;
+    background: #222;
+    color: white;
+}
+
+footer a {
+    color: white;
+}
+
+@media (max-width: 768px) {
+
+    header h1 {
+        font-size: 32px;
+    }
+
+    input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .cocktail-card {
+        flex-direction: column;
+    }
+
+    .cocktail-card img {
+        width: 100%;
+        height: auto;
+    }
+}

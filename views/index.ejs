@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cocktail Finder</title>
+
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🍹 Cocktail Finder</h1>
+        <p>Find cocktail recipes using TheCocktailDB API</p>
+    </header>
+
+    <main>
+
+        <section class="search-section">
+
+            <h2>Find a Cocktail</h2>
+
+            <form action="/search" method="GET">
+
+                <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter cocktail name..."
+                    required
+                >
+
+                <button type="submit">
+                    Search Cocktail
+                </button>
+
+            </form>
+
+            <form action="/random" method="GET">
+
+                <button type="submit" class="random-button">
+                    Random Cocktail
+                </button>
+
+            </form>
+
+        </section>
+
+        <% if (error) { %>
+
+            <div class="error">
+                <p><%= error %></p>
+            </div>
+
+        <% } %>
+
+
+        <% if (cocktail) { %>
+
+            <section class="cocktail-card">
+
+                <img
+                    src="<%= cocktail.strDrinkThumb %>"
+                    alt="<%= cocktail.strDrink %>"
+                >
+
+                <div class="cocktail-info">
+
+                    <h2>
+                        <%= cocktail.strDrink %>
+                    </h2>
+
+                    <p>
+                        <strong>Category:</strong>
+                        <%= cocktail.strCategory %>
+                    </p>
+
+                    <p>
+                        <strong>Type:</strong>
+                        <%= cocktail.strAlcoholic %>
+                    </p>
+
+                    <p>
+                        <strong>Glass:</strong>
+                        <%= cocktail.strGlass %>
+                    </p>
+
+                    <h3>Instructions</h3>
+
+                    <p>
+                        <%= cocktail.strInstructions %>
+                    </p>
+
+                    <h3>Ingredients</h3>
+
+                    <ul>
+
+                        <% for (let i = 1; i <= 15; i++) { %>
+
+                            <% const ingredient = cocktail[`strIngredient${i}`]; %>
+                            <% const measure = cocktail[`strMeasure${i}`]; %>
+
+                            <% if (ingredient) { %>
+
+                                <li>
+                                    <%= measure ? measure : "" %>
+                                    <%= ingredient %>
+                                </li>
+
+                            <% } %>
+
+                        <% } %>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+        <% } %>
+
+    </main>
+
+    <footer>
+        <p>
+            Data provided by
+            <a
+                href="https://www.thecocktaildb.com/"
+                target="_blank"
+            >
+                TheCocktailDB
+            </a>
+        </p>
+    </footer>
+
+</body>
+</html>
